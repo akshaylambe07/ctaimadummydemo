@@ -1,0 +1,24 @@
+<h1>Employee Details</h1>
+
+<p *ngIf="!employeeDetails"><em>Loading...</em></p>
+
+<table class='table' *ngIf="employeeDetails != undefined && employeeDetails.length > 0">
+    <thead>
+        <tr>
+            <th>Employee</th>
+            <th>Email</th>
+            <th>DNI</th>
+            <th>Company</th>
+            <th>Company Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employeeDetails">
+            <td ngbTooltip="employee.description">{{ employee.employeeName }}</td>
+            <td>{{ employee.email }}</td>
+            <td>{{ employee.dni }}</td>
+            <td>{{ employee.companyName }}</td>
+            <td>{{ employee.companyEmail }}</td>
+        </tr>
+    </tbody>
+</table>
